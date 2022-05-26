@@ -1,0 +1,11 @@
+Sub GrayScale()
+Dim oshp As Shape
+Dim osld As Slide
+For Each osld In ActivePresentation.Slides
+  For Each oshp In osld.Shapes
+    If oshp.Type = msoPicture Then
+      oshp.PictureFormat.ColorType = msoPictureGrayscale
+    End If
+  Next oshp
+Next osld
+End Sub
