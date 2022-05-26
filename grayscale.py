@@ -25,6 +25,7 @@ if __name__ == "__main__":
     for sl in range(startslide, endslide + 1):
         slide = presentation.slides[sl - 1]
         for shape in slide.shapes:
-            AddGrayscale(shape)
+            if shape.shape_type == 13:
+                AddGrayscale(shape)
 
     presentation.save(file)
